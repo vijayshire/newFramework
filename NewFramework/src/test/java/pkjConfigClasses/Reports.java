@@ -14,6 +14,34 @@
 
 package pkjConfigClasses;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+
 public class Reports {
+
+	public ExtentHtmlReporter myHtmlReporter;
+	public ExtentReports myReport;
+	public ExtentTest myTest;
+
+	public void mthdCreateHtmlReport(String htmlreportPath) {
+
+		myHtmlReporter = new ExtentHtmlReporter(htmlreportPath);
+		myReport = new ExtentReports();
+		myReport.attachReporter(myHtmlReporter);
+
+	}
+
+	public void mthdCreateNewTestInReport(String varTestCaseName) {
+
+		myTest = myReport.createTest(varTestCaseName);
+
+	}
+
+	public void mthdEndReport() {
+
+		myReport.flush();
+
+	}
 
 }

@@ -14,6 +14,28 @@
 
 package pkjConfigClasses;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+
 public class ObjectRepository {
 
+	public Properties objRepo;
+	public File propFile;
+	public FileInputStream propFileInputStream;
+
+	public void mthdCreateObjectRepository() {
+		try {
+
+			propFile = new File("C:\\Users\\vijay\\git\\newFramework\\NewFramework\\ObjectRepository.Properties");
+			propFileInputStream = new FileInputStream(propFile);
+			objRepo = new Properties();
+			objRepo.load(propFileInputStream);
+
+		}
+
+		catch (Exception e) {
+			System.out.println("Error Occured in Reading Object Repository" + e.getStackTrace());
+		}
+	}
 }
