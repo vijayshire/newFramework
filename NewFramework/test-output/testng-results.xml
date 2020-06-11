@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Flipkart" duration-ms="188456" started-at="2020-06-11T17:37:29Z" finished-at="2020-06-11T17:40:38Z">
+    <groups>
+    </groups>
+    <test name="Flipkart Test" duration-ms="188456" started-at="2020-06-11T17:37:29Z" finished-at="2020-06-11T17:40:38Z">
+      <class name="pkjTestCasesClasses.Test_Login_To_Flipkart">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@51c8530f]" name="beforeTest" is-config="true" duration-ms="34148" started-at="2020-06-11T17:37:29Z" finished-at="2020-06-11T17:38:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="login()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@51c8530f]" name="login" duration-ms="83028" started-at="2020-06-11T17:38:04Z" finished-at="2020-06-11T17:39:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@51c8530f]" name="afterTest" is-config="true" duration-ms="3814" started-at="2020-06-11T17:39:27Z" finished-at="2020-06-11T17:39:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- pkjTestCasesClasses.Test_Login_To_Flipkart -->
+      <class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@7403c468]" name="beforeSuite" is-config="true" duration-ms="1383" started-at="2020-06-11T17:37:28Z" finished-at="2020-06-11T17:37:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@51c8530f]" name="beforeSuite" is-config="true" duration-ms="5" started-at="2020-06-11T17:37:29Z" finished-at="2020-06-11T17:37:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@7403c468]" name="beforeTest" is-config="true" duration-ms="11797" started-at="2020-06-11T17:39:30Z" finished-at="2020-06-11T17:39:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="login()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@7403c468]" name="login" duration-ms="54661" started-at="2020-06-11T17:39:42Z" finished-at="2020-06-11T17:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@7403c468]" name="afterTest" is-config="true" duration-ms="932" started-at="2020-06-11T17:40:37Z" finished-at="2020-06-11T17:40:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@7403c468]" name="afterSuite" is-config="true" duration-ms="3733" started-at="2020-06-11T17:40:38Z" finished-at="2020-06-11T17:40:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@51c8530f]" name="afterSuite" is-config="true" duration-ms="679" started-at="2020-06-11T17:40:42Z" finished-at="2020-06-11T17:40:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- pkjTestCasesClasses.Test_Check_Login_To_Flipkart -->
+    </test> <!-- Flipkart Test -->
+  </suite> <!-- Flipkart -->
+</testng-results>

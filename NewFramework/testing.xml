@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Flipkart" preserve-order="true" parallel="false">
+<parameter name="Browser" value="Chrome"></parameter>
+<test name="Flipkart Test">
+<classes>
+<class name="pkjTestCasesClasses.Test_Login_To_Flipkart" />
+<class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart" />
+</classes>
+</test>
+</suite>
