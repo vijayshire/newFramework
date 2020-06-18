@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Flipkart]">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Flipkart]" parallel="methods">
   <parameter name="Browser" value="Chrome"/>
-  <test thread-count="5" name="Flipkart Test(failed)">
+  <test thread-count="2" name="Flipkart Test(failed)" parallel="methods">
     <classes>
+      <class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart">
+        <methods>
+          <include name="login"/>
+          <include name="beforeSuite"/>
+          <include name="afterSuite"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- pkjTestCasesClasses.Test_Check_Login_To_Flipkart -->
       <class name="pkjTestCasesClasses.Test_Login_To_Flipkart">
         <methods>
           <include name="login"/>

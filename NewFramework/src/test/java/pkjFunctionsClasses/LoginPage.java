@@ -32,6 +32,10 @@ public class LoginPage {
 	public Config objConfig1 = new Config();
 	public Screenshots objScrShot = new Screenshots();
 
+	public LoginPage() {
+		System.out.println("I am LoginPage constructor...");
+	}
+
 	public boolean txtBoxUserName(WebDriver driver, String userName) throws IOException {
 
 		try {
@@ -55,7 +59,7 @@ public class LoginPage {
 		catch (Exception e) {
 			System.out.println("Getting error in Username catch");
 			String str = objScrShot.mthdTakeScreenShot(driver,
-					Config.varPathOfSubFolder + "\\Step-" + ++(EventListener.i) + ".png");
+					objConfig1.getPath() + "\\Step-" + EventListener.getCount() + ".png");
 			System.out.println("Path.." + str);
 			objConfig1.log("Failed to enter username", "FAIL", str);
 			System.out.println("Error Occurred" + e.getStackTrace());
@@ -75,7 +79,7 @@ public class LoginPage {
 		catch (Exception e) {
 
 			String str = objScrShot.mthdTakeScreenShot(driver,
-					Config.varPathOfSubFolder + "\\ Step:" + EventListener.i++ + ".png");
+					objConfig1.getPath() + "\\ Step:" + EventListener.getCount() + ".png");
 			objConfig1.log("Failed to enter username", "FAIL", str);
 			System.out.println("Error Occurred" + e);
 			return false;
@@ -95,7 +99,7 @@ public class LoginPage {
 
 		catch (Exception e) {
 			String str = objScrShot.mthdTakeScreenShot(driver,
-					Config.varPathOfSubFolder + "\\ Step:" + EventListener.i++ + ".png");
+					objConfig1.getPath() + "\\ Step:" + EventListener.getCount() + ".png");
 			objConfig1.log("Failed to enter username", "FAIL", str);
 			System.out.println("Error Occurred" + e);
 			return false;
@@ -120,7 +124,7 @@ public class LoginPage {
 
 		catch (Exception e) {
 			String str = objScrShot.mthdTakeScreenShot(driver,
-					Config.varPathOfSubFolder + "\\ Step:" + EventListener.i++ + ".png");
+					objConfig1.getPath() + "\\ Step:" + EventListener.getCount() + ".png");
 			objConfig1.log("Failed to enter username", "FAIL", str);
 			System.out.println("Error Occurred" + e);
 			return false;

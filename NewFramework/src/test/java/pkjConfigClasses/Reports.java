@@ -16,6 +16,7 @@ package pkjConfigClasses;
 
 import java.io.IOException;
 
+import com.aventstack.extentreports.ExtentReporter;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -24,9 +25,10 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 public class Reports {
 
-	public ExtentHtmlReporter myHtmlReporter;
+	public ExtentReporter myHtmlReporter;
 	public ExtentReports myReport;
-	public ExtentTest myTest;
+	public static ThreadLocal<ExtentTest> myTest = new ThreadLocal<ExtentTest>();
+	public ExtentTest myTest1;
 	public String varTestcaseName;
 
 	public void mthdCreateHtmlReport(String htmlreportPath) {
@@ -37,6 +39,7 @@ public class Reports {
 			myReport = new ExtentReports();
 			myReport.attachReporter(myHtmlReporter);
 			System.out.println("New Html Report created...");
+			myTest.set(myTest1);
 		}
 
 		catch (Exception e) {
@@ -47,10 +50,10 @@ public class Reports {
 
 	}
 
-	public void mthdCreateNewTestInReport(String varTestCaseName) {
+	public synchronized void mthdCreateNewTestInReport(String varTestCaseName) {
 		try {
 			this.varTestcaseName = varTestCaseName;
-			myTest = myReport.createTest(varTestCaseName);
+			myTest.set(myReport.createTest(varTestCaseName));
 			System.out.println("New Test is created in Html report");
 		}
 
@@ -66,18 +69,23 @@ public class Reports {
 
 	}
 
-	public void mthdLog(String msg, String status, String varScreenShotPath) {
+	public synchronized void mthdLog(String msg, String status, String varScreenShotPath) {
 
 		System.out.println("Inside MthLog.....");
 		try {
-			myTest.log(Status.valueOf(status), msg,
+			myTest.get().log(Status.valueOf(status), msg,
 					MediaEntityBuilder.createScreenCaptureFromPath(varScreenShotPath).build());
 
 			System.out.println("Screenshot Attached to test........");
 		} catch (IOException e) {
 
-			e.printStackTrace();
+			System.out.println("Error Occured in Method Log" + e.getStackTrace());
 		}
 
+	}
+
+	Reports() {
+		int i = 0;
+		System.out.println("I am Object" + i++);
 	}
 }

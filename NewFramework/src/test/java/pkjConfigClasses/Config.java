@@ -32,14 +32,26 @@ public class Config {
 	public File parentFolder;
 	public String varTimeStamp;
 	public String varPathOfParentFolder;
-	public static String varPathOfSubFolder;
+	private static ThreadLocal<String> varPathOfSubFolder = new ThreadLocal<>();
 	public File subFolder;
-	public static Reports reportObj = new Reports();
+	private static Reports reportObj = new Reports();
 	public String varTestCaseName;
 	public WebDriver driver;
+	// protected static ThreadLocal<WebDriver> driver = new
+	// ThreadLocal<WebDriver>();
 	public EventFiringWebDriver driver1;
 	public String varBrowser;
 	public ObjectRepository objRepoitory = new ObjectRepository();
+
+	public Config() {
+
+		System.out.println("I am config Constructor..");
+	}
+
+	public synchronized String getPath() {
+
+		return varPathOfSubFolder.get();
+	}
 
 	public void mthdCreateParentFolder() {
 
@@ -75,7 +87,7 @@ public class Config {
 
 			}
 
-			varPathOfSubFolder = subFolder.getAbsolutePath();
+			varPathOfSubFolder.set(subFolder.getAbsolutePath());
 
 		} catch (Exception e) {
 
@@ -88,11 +100,12 @@ public class Config {
 
 		mthdCreateParentFolder();
 		System.out.println("Calling Create Html Report");
+
 		reportObj.mthdCreateHtmlReport(varPathOfParentFolder + "\\" + varTimeStamp + ".html");
 
 	}
 
-	public WebDriver mthdBeforeTest(String varTestCaseName, String varBrowser) {
+	public synchronized WebDriver mthdBeforeTest(String varTestCaseName, String varBrowser) {
 
 		this.varTestCaseName = varTestCaseName;
 		System.out.println("Calling Create Sub Foler()");
@@ -106,27 +119,28 @@ public class Config {
 		return driver;
 	}
 
-	public void mthdAfterTest() {
-		driver.close();
+	public void mthdAfterTest(WebDriver driver1) {
+		driver1.close();
 	}
 
 	public void mthdAfterSuite() {
 		try {
 			driver.quit();
+
 			reportObj.mthdEndReport();
-			Winzip.pack(this.varPathOfParentFolder, "G:\\compress.zip");
+			// Winzip.pack(this.varPathOfParentFolder, "G:\\ReportBackup\\compress.zip");
 		} catch (Exception e) {
 			System.out.println("Error Occured in Zip" + e);
 		}
 	}
 
-	public void mthdInitWebDriver() {
+	public synchronized void mthdInitWebDriver() {
 		switch (this.varBrowser) {
 
 		case "Chrome":
 			System.setProperty("webdriver.chrome.driver", "G:\\chromedriver.exe");
 			driver = new ChromeDriver();
-			driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+			// driver = Config.getDriver();
 			System.out.println("Inside Switch Case");
 
 			break;
@@ -151,6 +165,7 @@ public class Config {
 	}
 
 	public void log(String msg, String status, String str) {
+
 		reportObj.mthdLog(msg, status, str);
 	}
 
