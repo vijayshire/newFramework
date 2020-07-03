@@ -24,9 +24,10 @@ import pkjUtilityClasses.Screenshots;
 public class EventListener extends AbstractWebDriverEventListener {
 
 	// public WebDriver driver;
-	public static EventFiringWebDriver driver1;
-	public static EventListener refEventListener;
-	Screenshots objScrShot = new Screenshots();
+	private static EventFiringWebDriver driver1;
+	private static EventListener refEventListener;
+	public Screenshots objScrShot = new Screenshots();
+
 	public Config objConfig = new Config();
 
 	private static ThreadLocal<Integer> i = new ThreadLocal<>();
@@ -45,13 +46,15 @@ public class EventListener extends AbstractWebDriverEventListener {
 		driver1.register(refEventListener);
 		System.out.println("Registered Successfully...");
 		i.set(0);
+
 		return driver1;
 	}
 
 	@Override
 	public synchronized void afterClickOn(WebElement element, WebDriver driver) {
 		System.out.println("Clicked on Element" + element);
-		String str = objScrShot.mthdTakeScreenShot(driver1,
+
+		String str = objScrShot.mthdTakeScreenShot(driver,
 				objConfig.getPath() + "\\Step-" + EventListener.getCount() + ".png");
 		System.out.println("Str" + str);
 		objConfig.log("Clicked on Successfully", "PASS", str);
@@ -60,7 +63,7 @@ public class EventListener extends AbstractWebDriverEventListener {
 	@Override
 	public synchronized void afterNavigateTo(String url, WebDriver driver) {
 		System.out.println("Navigated to " + url + " successfully");
-		String str = objScrShot.mthdTakeScreenShot(driver1,
+		String str = objScrShot.mthdTakeScreenShot(driver,
 				objConfig.getPath() + "\\Step-" + EventListener.getCount() + ".png");
 		System.out.println("Str" + str);
 		objConfig.log("Navigated To " + url + " Successfully", "PASS", str);
@@ -76,13 +79,14 @@ public class EventListener extends AbstractWebDriverEventListener {
 	public synchronized void beforeNavigateTo(String url, WebDriver driver) {
 
 		System.out.println("Tryng to Navigate to URL" + url);
+
 	}
 
 	@Override
 	public synchronized void afterChangeValueOf(WebElement element, WebDriver driver, CharSequence[] keysToSend) {
 
 		System.out.println("Value" + keysToSend + " has been entered..");
-		String str = objScrShot.mthdTakeScreenShot(driver1,
+		String str = objScrShot.mthdTakeScreenShot(driver,
 				objConfig.getPath() + "\\Step-" + EventListener.getCount() + ".png");
 		System.out.println("Str" + str);
 		objConfig.log("Value" + keysToSend + " has been entered..", "PASS", str);

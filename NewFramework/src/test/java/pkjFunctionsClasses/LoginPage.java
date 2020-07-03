@@ -34,22 +34,26 @@ public class LoginPage {
 
 	public LoginPage() {
 		System.out.println("I am LoginPage constructor...");
+
 	}
 
 	public boolean txtBoxUserName(WebDriver driver, String userName) throws IOException {
 
 		try {
 			objRepoitory.mthdCreateObjectRepository();
-			System.out.println("Inside Login Page username method...");
+
+			System.out
+					.println("Inside Login Page username method..." + objRepoitory.objRepo.getProperty("loginDialog"));
 
 			if (driver.findElement(By.xpath(objRepoitory.objRepo.getProperty("loginDialog"))).isEnabled()) {
+				System.out.println("inside if Login Link......");
 
 				driver.findElement(By.xpath(objRepoitory.objRepo.getProperty("loginDialogClose"))).click();
 			}
-			Thread.sleep(5000);
-
+			Thread.sleep(10000);
+			System.out.println("Checking Login Link......");
 			driver.findElement(By.xpath(objRepoitory.objRepo.getProperty("loginLink"))).click();
-
+			System.out.println("Clicked..........");
 			driver.findElement(By.xpath(objRepoitory.objRepo.getProperty("loginUserName"))).sendKeys(userName);
 
 			return true;

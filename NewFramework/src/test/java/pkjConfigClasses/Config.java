@@ -147,21 +147,33 @@ public class Config {
 		case "Firefox":
 			System.setProperty("webdriver.gecko.driver", "G:\\geckodriver.exe");
 			driver = new FirefoxDriver();
+			driver.get("https://www.flipkart.com");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
 			break;
 		case "IE":
 			System.setProperty("webdriver.ie.driver", "G:\\IEDriverServer.exe");
 			driver = new FirefoxDriver();
+			driver.get("https://www.flipkart.com");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
 			break;
 		default:
 			System.setProperty("webdriver.chrome.driver", "G:\\chromedriver.exe");
 			driver = new ChromeDriver();
+			driver.get("https://www.flipkart.com");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 
 			break;
 		}
 		System.out.println("Calling Register Method...");
 		driver = EventListener.mthdRegisterWebDriver(driver);
+		driver.get("https://www.flipkart.com");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 	}
 
 	public void log(String msg, String status, String str) {

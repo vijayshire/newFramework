@@ -22,7 +22,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Screenshots {
 
-	public String mthdTakeScreenShot(WebDriver driver, String varFileWithpath) {
+	public synchronized String mthdTakeScreenShot(WebDriver driver, String varFileWithpath) {
 		try {
 			System.out.println("Inside Screenshot...");
 			Thread.sleep(5000);

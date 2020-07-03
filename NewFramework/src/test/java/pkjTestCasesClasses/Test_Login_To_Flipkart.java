@@ -4,7 +4,10 @@ import org.testng.annotations.Test;
 
 import pkjConfigClasses.Config;
 import pkjFunctionsClasses.LoginPage;
+import pkjUtilityClasses.TestData;
+
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -25,18 +28,14 @@ public class Test_Login_To_Flipkart {
 
 	Config objConfig = new Config();
 	LoginPage objLoginPage = new LoginPage();
+	private TestData objTestData1 = new TestData();
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 
-	@Test
-	public void login() throws IOException {
-		driver.get().get("https://www.flipkart.com");
-		driver.get().manage().window().maximize();
-		driver.get().manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+	@Test(dataProvider = "getData")
+	public void login(String userName, String passWord) throws IOException {
 
-		Assert.assertEquals(objLoginPage.txtBoxUserName(driver.get(), "9158833338"), true,
-				"Error in inserting username");
-		Assert.assertEquals(objLoginPage.txtBoxPassword(driver.get(), "Success@1816"), true,
-				"Error in inserting Password");
+		Assert.assertEquals(objLoginPage.txtBoxUserName(driver.get(), userName), true, "Error in inserting username");
+		Assert.assertEquals(objLoginPage.txtBoxPassword(driver.get(), passWord), true, "Error in inserting Password");
 		Assert.assertEquals(objLoginPage.btnLogin(driver.get()), true, "Error in clicking Login button");
 
 	}
@@ -67,5 +66,13 @@ public class Test_Login_To_Flipkart {
 
 		objConfig.mthdAfterSuite();
 
+	}
+
+	@DataProvider(name = "getData")
+	public Object[][] getData() throws IOException {
+
+		Object[][] test = objTestData1.getData(this.getClass().getSimpleName());
+
+		return test;
 	}
 }

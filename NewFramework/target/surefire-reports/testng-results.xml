@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Flipkart" duration-ms="148431" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:34:54Z">
+  <suite started-at="2020-07-03T11:26:21Z" name="Flipkart" finished-at="2020-07-03T11:42:00Z" duration-ms="938194">
     <groups>
     </groups>
-    <test name="Flipkart Test" duration-ms="148431" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:34:54Z">
+    <test started-at="2020-07-03T11:26:21Z" name="Flipkart Test" finished-at="2020-07-03T11:42:00Z" duration-ms="938194">
       <class name="pkjTestCasesClasses.Test_Login_To_Flipkart">
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@7a1ebcd8]" name="beforeTest" is-config="true" duration-ms="42938" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:33:08Z">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:26:22Z" name="beforeTest" finished-at="2020-07-03T11:26:43Z" duration-ms="21407" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,25 +18,53 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="login()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@7a1ebcd8]" name="login" duration-ms="100787" started-at="2020-06-18T09:33:08Z" finished-at="2020-06-18T09:34:49Z">
+        <test-method signature="login(java.lang.String, java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:26:44Z" name="login" data-provider="getData" finished-at="2020-07-03T11:27:27Z" duration-ms="42722" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[vsdf]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@7a1ebcd8]" name="afterTest" is-config="true" duration-ms="2113" started-at="2020-06-18T09:34:49Z" finished-at="2020-06-18T09:34:51Z">
+        <test-method signature="login(java.lang.String, java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:27:27Z" name="login" data-provider="getData" finished-at="2020-07-03T11:28:09Z" duration-ms="42507" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[usr4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[fdgssss]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:28:09Z" name="afterTest" finished-at="2020-07-03T11:28:13Z" duration-ms="4120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
       </class> <!-- pkjTestCasesClasses.Test_Login_To_Flipkart -->
       <class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@5faeada1]" name="beforeSuite" is-config="true" duration-ms="516" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:32:25Z">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:26:21Z" name="beforeSuite" finished-at="2020-07-03T11:26:21Z" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@7a1ebcd8]" name="beforeSuite" is-config="true" duration-ms="10" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:32:25Z">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:26:21Z" name="beforeSuite" finished-at="2020-07-03T11:26:21Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="beforeTest(java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@5faeada1]" name="beforeTest" is-config="true" duration-ms="42922" started-at="2020-06-18T09:32:25Z" finished-at="2020-06-18T09:33:08Z">
+        <test-method is-config="true" signature="beforeTest(java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:26:22Z" name="beforeTest" finished-at="2020-07-03T11:27:46Z" duration-ms="84017" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -47,19 +75,47 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="login()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@5faeada1]" name="login" duration-ms="102326" started-at="2020-06-18T09:33:08Z" finished-at="2020-06-18T09:34:51Z">
+        <test-method signature="login(java.lang.String, java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:27:46Z" name="login" data-provider="getData" finished-at="2020-07-03T11:34:51Z" duration-ms="425680" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Success@1816]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@5faeada1]" name="afterTest" is-config="true" duration-ms="3135" started-at="2020-06-18T09:34:51Z" finished-at="2020-06-18T09:34:54Z">
+        <test-method signature="login(java.lang.String, java.lang.String)[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:34:51Z" name="login" data-provider="getData" finished-at="2020-07-03T11:41:59Z" duration-ms="427849" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[user2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[jkhkjfhasjkf]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:41:59Z" name="afterTest" finished-at="2020-07-03T11:42:00Z" duration-ms="585" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@5faeada1]" name="afterSuite" is-config="true" duration-ms="4499" started-at="2020-06-18T09:34:54Z" finished-at="2020-06-18T09:34:59Z">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Check_Login_To_Flipkart@47faa49c]" started-at="2020-07-03T11:42:00Z" name="afterSuite" finished-at="2020-07-03T11:42:02Z" duration-ms="1815" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@7a1ebcd8]" name="afterSuite" is-config="true" duration-ms="625" started-at="2020-06-18T09:34:59Z" finished-at="2020-06-18T09:35:00Z">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:pkjTestCasesClasses.Test_Login_To_Flipkart@73e22a3d]" started-at="2020-07-03T11:42:02Z" name="afterSuite" finished-at="2020-07-03T11:42:02Z" duration-ms="648" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
