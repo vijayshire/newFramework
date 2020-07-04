@@ -6,6 +6,7 @@
 <classes>
 <class name="pkjTestCasesClasses.Test_Login_To_Flipkart" />
 <class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart" />
+<class name="pkjTestCasesClasses.Test_Check_Login_To_Flipkart" />
 </classes>
 </test>
 </suite>
