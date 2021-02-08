@@ -1,23 +1,32 @@
 package pkjTestCasesClasses;
 
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class NewTest {
-	public WebDriver driver;
+public class NewTest extends RemoteWebDriver {
+
 	int i = 1;
 
 	@Test
 	public void f() {
+		System.setProperty("webdriver.chrome.driver", "G:\\chromedriver.exe");
+		RemoteWebDriver driver = new ChromeDriver();
+		WebDriver driver1 = new ChromeDriver();
+		ChromeDriver driver2 = new ChromeDriver();
 
 		System.out.println("I am Test..." + i);
+		driver1.get("https://www.google.com");
+		driver.get("https://www.google.com");
+
 	}
 
 	@BeforeTest

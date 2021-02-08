@@ -40,7 +40,7 @@ public class Test_Login_To_Flipkart {
 
 	}
 
-	@BeforeClass
+	@BeforeTest
 	@Parameters({ "Browser" })
 	public void beforeTest(String browser) {
 		driver.set(objConfig.mthdBeforeTest(this.getClass().getSimpleName(), browser));
@@ -55,7 +55,7 @@ public class Test_Login_To_Flipkart {
 
 	}
 
-	@AfterClass
+	@AfterTest
 	public void afterTest() {
 		objConfig.mthdAfterTest(driver.get());
 

@@ -22,6 +22,9 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -154,7 +157,21 @@ public class Config {
 			break;
 		case "IE":
 			System.setProperty("webdriver.ie.driver", "G:\\IEDriverServer.exe");
-			driver = new FirefoxDriver();
+			DesiredCapabilities caps = new DesiredCapabilities().internetExplorer();
+
+			caps.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
+
+			// Launch Internet Explorer
+			driver = new InternetExplorerDriver(caps);
+
+			driver.get("https://www.flipkart.com");
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+
+			break;
+		case "HTML":
+
+			driver = new HtmlUnitDriver();
 			driver.get("https://www.flipkart.com");
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
@@ -173,7 +190,7 @@ public class Config {
 		driver = EventListener.mthdRegisterWebDriver(driver);
 		driver.get("https://www.flipkart.com");
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 	}
 
 	public void log(String msg, String status, String str) {
