@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Flipkart]">
+<suite name="Failed suite [Flipkart]" guice-stage="DEVELOPMENT" verbose="0">
   <parameter name="Browser" value="Chrome"/>
-  <test thread-count="5" verbose="0" name="Flipkart Test(failed)">
+  <test thread-count="5" name="Flipkart Test(failed)" verbose="0">
     <classes>
       <class name="pkjTestCasesClasses.Test_Login_To_Flipkart">
         <methods>
-          <include name="login" invocation-numbers="0 1"/>
+          <include name="login"/>
           <include name="afterTest"/>
           <include name="beforeSuite"/>
           <include name="beforeTest"/>
